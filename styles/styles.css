@@ -1,0 +1,29 @@
+@import "./variables.css";
+
+:root {
+  font-family: var(--ff-base);
+  min-inline-size: var(--minWidth);
+  background-color: var(--clr-background-primary);
+}
+
+.wrapper {
+  max-inline-size: var(--maxWidth-mobile);
+  margin-inline: auto;
+  font-size: var(--font-text);
+  color: var(--clr-text-primary);
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 700;
+}
+
+p {
+  margin: 0;
+}
