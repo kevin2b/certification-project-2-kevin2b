@@ -1,9 +1,9 @@
 :root {
   --minWidth: 20rem;
-  --maxWidth-mobile: 23.4375rem;
+  --maxWidth-mobile: 20rem;
   --maxWidth-desktop: 90rem;
 
   --ff-base: "Montserrat", sans-serif;
-  --font-text: 0.9rem;
+  --font-text: 1rem;
   --clr-white: white;
 }

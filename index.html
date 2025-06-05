@@ -12,5 +12,82 @@
   <script type="module" src="./scripts/script.js" defer></script>
 </head>
 <body>
+  <div class="wrapper">
+    <header class="header">
+      <img src="./images/logo.svg" alt="Logo" class="header__logo">
+      <div class="header-wrapper">
+        <h1 class="header__heading">
+          RPS
+        </h1>
+        <h1 class="header__heading">
+          Legend
+        </h1>
+      </div>
+    </header>
+    <main class="game-wrapper">
+      <section class="game__row game__enemy">
+        <span class="enemy__name"> Computer: </span>
+        <span class="enemy__score"> 0 </span>
+      </section>
+      <section class="game__row enemy__option-group">
+        <button class="enemy__option">
+          <img src="./images/rock.svg" alt="Rock" class="option__img">
+          <p class="option__text">Rock</p>
+        </button>
+        <button class="enemy__option">
+          <img src="./images/paper.svg" alt="Paper" class="option__img">
+          <p class="option__text">Paper</p>
+        </button>
+        <button class="enemy__option">
+          <img src="./images/scissor.svg" alt="Scissor" class="option__img">
+          <p class="option__text">Scissor</p>
+        </button>
+      </section>
+      <section class="game__row enemy__choice">
+          <img src="./images/rock.svg" alt="Rock" class="option__img">
+          <p class="option__text">Rock</p>   
+          <img src="./images/paper.svg" alt="Paper" class="option__img">
+          <p class="option__text">Paper</p>
+          <img src="./images/scissor.svg" alt="Scissor" class="option__img">
+          <p class="option__text">Scissor</p>  
+      </section>
+      <section class="game__row game__info">
+        <p class="game__meta"> Meta Info</p>
+        <p class="game__round"> Round Info</p>
+      </section>
+      <section class="game__row player__choice">
+          <img src="./images/rock.svg" alt="Rock" class="option__img">
+          <p class="option__text">Rock</p>   
+          <img src="./images/paper.svg" alt="Paper" class="option__img">
+          <p class="option__text">Paper</p>
+          <img src="./images/scissor.svg" alt="Scissor" class="option__img">
+          <p class="option__text">Scissor</p>  
+      </section>
+      <section class="game__row player__option-group">
+        <button class="player__option">
+          <img src="./images/rock.svg" alt="Rock" class="option__img">
+          <p class="option__text">Rock</p>
+        </button>
+        <button class="player__option">
+          <img src="./images/paper.svg" alt="Paper" class="option__img">
+          <p class="option__text">Paper</p>
+        </button>
+        <button class="player__option">
+          <img src="./images/scissor.svg" alt="Scissor" class="option__img">
+          <p class="option__text">Scissor</p>
+        </button>
+      </section>
+      <section class="game__row game__player">
+        <span class="player__name"> Player: </span>
+        <span class="player__score"> 0 </span>
+      </section>
+
+      <aside class="help">
+        <button class="help__button">
+          <img src="./images/help.svg" alt="Help" class="help__img">
+        </button>
+      </aside>
+    </main>
+  </div>
 </body>
 </html>

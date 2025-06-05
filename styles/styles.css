@@ -3,14 +3,80 @@
 :root {
   font-family: var(--ff-base);
   min-inline-size: var(--minWidth);
-  background-color: var(--clr-background-primary);
 }
 
 .wrapper {
   max-inline-size: var(--maxWidth-mobile);
   margin-inline: auto;
   font-size: var(--font-text);
-  color: var(--clr-text-primary);
+}
+
+*{
+  border: 1px solid black;
+}
+
+.header{
+  display: flex;
+}
+
+.header__logo{
+  display: block;
+  max-block-size: 3rem;
+  inline-size: auto;
+  align-self: center;
+}
+
+.game-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.game__enemy{
+  align-self: flex-end;
+}
+
+.enemy__option-group,
+.player__option-group{
+  display: flex;
+  flex-direction: column;
+}
+
+.enemy__option,
+.player__option{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.option__img{
+  display: flex;
+  max-block-size: 2rem;
+  inline-size: auto;
+  align-self: center;
+}
+
+.enemy__choice,
+.player__choice{
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.game__info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game__player{
+  align-items: flex-start;
+}
+
+.help__img{
+  display: flex;
+  block-size: 2rem;
+  inline-size: auto;
+  align-self: center; 
 }
 
 

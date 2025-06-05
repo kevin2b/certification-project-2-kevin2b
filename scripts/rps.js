@@ -14,11 +14,12 @@
    * a new game begins and the previous game score is recorded accordingly based on the results of rounds of that game (+1 for overall 
    * win, +0.5 for both player and CPU for draw)
    * @param {Number} playerChoiceNum Integer 0, 1, or 2 representing Rock, Paper or Scissor respectively. Rock is used if invalid input.
+   * @param {Number} CPUChoiceNum Integer 0, 1, or 2 representing Rock, Paper or Scissor respectively. Rock is used if invalid input.
    */
-  playRound(playerChoiceNum){
+  playRound(playerChoiceNum, CPUChoiceNum){
     const DICTIONARY = {0: "Rock", 1: "Paper", 2: "Scissor"};
     const playerChoice = DICTIONARY?.[playerChoiceNum] || "Rock";
-    const CPUChoice = DICTIONARY[this.#generateCPUChoice()];
+    const CPUChoice = DICTIONARY?.[CPUChoiceNum] || "Rock";
 
     if (this.#round > RPS.TOTAL_ROUNDS){
       this.#newGame();
@@ -90,7 +91,7 @@
    * 
    * @returns Random integer from 0 to 2 inclusive
    */
-  #generateCPUChoice(){
+  generateCPUChoice(){
     return Math.floor(Math.random() * 3);
   }
 
