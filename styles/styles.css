@@ -12,7 +12,7 @@
 }
 
 *{
-  border: 1px solid black;
+  outline: 1px solid black;
 }
 
 .header{
@@ -29,6 +29,7 @@
 .game-wrapper{
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .game__enemy{
@@ -59,17 +60,80 @@
 .player__choice{
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
+  min-block-size: 2.5rem;
+}
+
+.selected__img{
+  display: flex;
+  max-block-size: 2rem;
+  inline-size: auto;
+  align-self: center;
+}
+
+.selected{
+  transition: transform 0.5s ease-in;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inline-size: 100%;
+}
+
+.js-enemy-selected{
+  transform: translateX(100%);
+}
+
+.js-player-selected{
+  transform: translateX(-100%);
+}
+
+.selected.js-show {
+  transform: translateX(0);
 }
 
 .game__info{
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-block-size: 5rem;
+}
+
+.game__play{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game__over{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game__play-again,
+.game__reset{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.play__img{
+  display: block;
+  block-size: 2rem;
+  max-block-size: 2rem;
+  inline-size: auto;
 }
 
 .game__player{
   align-items: flex-start;
+}
+
+.help__button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  inline-size: fit-content;
 }
 
 .help__img{
@@ -77,6 +141,27 @@
   block-size: 2rem;
   inline-size: auto;
   align-self: center; 
+}
+
+.help{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  inline-size: 75%;
+  min-block-size: 100%;
+}
+
+.js-hidden{
+  display: none;
+}
+
+.js-player-outline{
+  outline: 5px solid blue;
+}
+
+.js-enemy-outline{
+  outline: 5px solid red;
 }
 
 

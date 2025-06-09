@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./styles/modern-normalize.css" />
   <link rel="stylesheet" href="./styles/styles.css" />
   <script type="module" src="./scripts/script.js" defer></script>
+  <script src="./scripts/help.js" defer></script>
 </head>
 <body>
   <div class="wrapper">
@@ -27,66 +28,88 @@
     <main class="game-wrapper">
       <section class="game__row game__enemy">
         <span class="enemy__name"> Computer: </span>
-        <span class="enemy__score"> 0 </span>
+        <span class="enemy__score" id="enemy-score"> 0 </span>
       </section>
-      <section class="game__row enemy__option-group">
-        <button class="enemy__option">
+      <section class="game__row enemy__option-group" id="CPU-options">
+        <button class="enemy__option js-enemy-option" disabled>
           <img src="./images/rock.svg" alt="Rock" class="option__img">
           <p class="option__text">Rock</p>
         </button>
-        <button class="enemy__option">
+        <button class="enemy__option js-enemy-option" disabled>
           <img src="./images/paper.svg" alt="Paper" class="option__img">
           <p class="option__text">Paper</p>
         </button>
-        <button class="enemy__option">
+        <button class="enemy__option js-enemy-option" disabled>
           <img src="./images/scissor.svg" alt="Scissor" class="option__img">
           <p class="option__text">Scissor</p>
         </button>
       </section>
-      <section class="game__row enemy__choice">
-          <img src="./images/rock.svg" alt="Rock" class="option__img">
-          <p class="option__text">Rock</p>   
-          <img src="./images/paper.svg" alt="Paper" class="option__img">
-          <p class="option__text">Paper</p>
-          <img src="./images/scissor.svg" alt="Scissor" class="option__img">
-          <p class="option__text">Scissor</p>  
-      </section>
+    <section class="game__row enemy__choice">
+      <div class="selected js-enemy-selected js-hidden">
+        <img src="./images/rock.svg" alt="Rock" class="selected__img">
+        <p class="selected__text"> Rock</p>
+      </div>
+      <div class="selected js-enemy-selected js-hidden">
+        <img src="./images/paper.svg" alt="Paper" class="selected__img">
+        <p class="selected__text">Paper</p>
+      </div>
+      <div class="selected js-enemy-selected js-hidden">
+        <img src="./images/scissor.svg" alt="Scissor" class="selected__img">
+        <p class="selected__text">Scissor</p>
+      </div>
+    </section>
       <section class="game__row game__info">
-        <p class="game__meta"> Meta Info</p>
-        <p class="game__round"> Round Info</p>
+        <p class="game__meta js-hidden" id="meta-info"> Meta Info</p>
+        <p class="game__round js-hidden" id="round-info"> Round Info</p>
+        <button class="game__play" id="play">
+          <img src="./images/play.svg" alt="Play" class="play__img">
+          <p class="play__text">Play</p>
+        </button>
+        <div class="game__over js-hidden" id="game-over">
+          <button class="game__play-again" id="play-again">
+            Play Again
+          </button>
+          <button class="game__reset" id="reset">
+            Reset
+          </button>
+        </div>
       </section>
       <section class="game__row player__choice">
-          <img src="./images/rock.svg" alt="Rock" class="option__img">
-          <p class="option__text">Rock</p>   
-          <img src="./images/paper.svg" alt="Paper" class="option__img">
-          <p class="option__text">Paper</p>
-          <img src="./images/scissor.svg" alt="Scissor" class="option__img">
-          <p class="option__text">Scissor</p>  
+        <div class="selected js-player-selected  js-hidden">
+          <img src="./images/rock.svg" alt="Rock" class="selected__img">
+          <p class="selected__text">Rock</p>
+        </div>
+        <div class="selected js-player-selected  js-hidden">
+          <img src="./images/paper.svg" alt="Paper" class="selected__img">
+          <p class="selected__text">Paper</p>
+        </div>
+        <div class="selected js-player-selected  js-hidden">
+          <img src="./images/scissor.svg" alt="Scissor" class="selected__img">
+          <p class="selected__text">Scissor</p>
+        </div>
       </section>
-      <section class="game__row player__option-group">
-        <button class="player__option">
+      <section class="game__row player__option-group" id="player-options">
+        <button class="player__option js-player-option" id="player-rock" disabled>
           <img src="./images/rock.svg" alt="Rock" class="option__img">
           <p class="option__text">Rock</p>
         </button>
-        <button class="player__option">
+        <button class="player__option js-player-option" id="player-paper" disabled>
           <img src="./images/paper.svg" alt="Paper" class="option__img">
           <p class="option__text">Paper</p>
         </button>
-        <button class="player__option">
+        <button class="player__option js-player-option" id="player-scissor" disabled>
           <img src="./images/scissor.svg" alt="Scissor" class="option__img">
           <p class="option__text">Scissor</p>
         </button>
       </section>
       <section class="game__row game__player">
         <span class="player__name"> Player: </span>
-        <span class="player__score"> 0 </span>
+        <span class="player__score" id="player-score"> 0 </span>
       </section>
+      <button class="help__button">
+        <img src="./images/help.svg" alt="Help" class="help__img">
+      </button>
 
-      <aside class="help">
-        <button class="help__button">
-          <img src="./images/help.svg" alt="Help" class="help__img">
-        </button>
-      </aside>
     </main>
   </div>
 </body>
