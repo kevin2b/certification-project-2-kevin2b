@@ -106,10 +106,28 @@
         <span class="player__name"> Player: </span>
         <span class="player__score" id="player-score"> 0 </span>
       </section>
-      <button class="help__button">
+      <button class="help__button" id="help-button">
         <img src="./images/help.svg" alt="Help" class="help__img">
       </button>
-
+      <aside class="help js-hidden" id="help-info">
+        <img src="./images/cross.svg" alt="Close" class="help__close-img" id="help-close">
+        <div class="help__text-wrapper">
+          <h2 class="help__header">
+            How to Play?
+          </h2>
+          <p class="help__instruction">
+            Click "Play" to start to play.
+            <br>
+            Each game is composed of 3 rounds. Click the buttons on your side to select "Rock", "Paper" or "Scissor". 
+            <br>
+            Rock beats Scissor, Paper beats Rock and Scissor beats Paper. A win grants +1 point while a tie grants +0.5 point towards the game.
+            <br>
+            After 3 rounds, whoever has the most point wins that game, granting +1 for a win and +0.5 for a tie.
+            <br>
+            At the end of the game, you may choose to "Play Again" to continue or "Reset" to start over again. 
+          </p>
+        </div>
+      </aside>
     </main>
   </div>
 </body>

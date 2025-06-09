@@ -148,8 +148,18 @@
   top: 0;
   left: 0;
   background-color: white;
-  inline-size: 75%;
   min-block-size: 100%;
+  inline-size: 75%;
+  text-align: right;
+}
+
+.help__close-img{
+  inline-size: 2rem;
+  block-size: auto;
+}
+
+.help__text-wrapper{
+  text-align: left;
 }
 
 .js-hidden{
