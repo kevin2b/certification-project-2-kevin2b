@@ -7,5 +7,21 @@ helpButton.addEventListener("click", ()=>{
 });
 
 helpClose.addEventListener("click", ()=>{
-  helpInfo.classList.add("js-hidden");
+  closeHelp();
 });
+
+helpClose.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') {
+    closeHelp();
+  }
+});
+
+window.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeHelp();
+  }
+});
+
+function closeHelp(){
+  helpInfo.classList.add("js-hidden");
+}

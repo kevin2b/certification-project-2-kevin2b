@@ -1,9 +1,78 @@
+@font-face {
+  font-family: 'Press Start 2P';
+  src: url('../fonts/Press_Start_2P/PressStart2P-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('../fonts/Rubik/Rubik-Italic-VariableFont_wght.ttf');
+  font-weight: 300 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('../fonts/Quicksand/Quicksand-VariableFont_wght.ttf');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --minWidth: 20rem;
   --maxWidth-mobile: 20rem;
   --maxWidth-desktop: 90rem;
 
-  --ff-base: "Montserrat", sans-serif;
+  --ff-base: "Quicksand", sans-serif;
+  --ff-heading-1: "Press Start 2P", system-ui;
+  --ff-heading-2: "Rubik", sans-serif;
   --font-text: 1rem;
+  --font-text-large: 1.25rem;
+
   --clr-white: white;
+  --clr-black: black;
+  --clr-green: #22c55e;
+  --clr-lightGreen: #86efac;
+  --clr-red-300: #FEE2E2;
+  --clr-red-400: #FCA5A5;
+  --clr-red-500: #F87171;
+  --clr-red: red;
+
+  --clr-blue-200: #DBEAFE;
+  --clr-blue-250: #bad2f1;
+  --clr-blue-300: #93C5FD;
+  --clr-blue-400: #60A5FA;
+  --clr-blue-500: #306ccf;
+  --clr-blue-600: #2563EB;
+  --clr-blue: blue;
+
+  --clr-darkBlue: #1F2937;
+
+  --clr-background-primary: var(--clr-darkBlue);
+  --clr-background-secondary: var(--clr-red-300);
+  --clr-background-tertiary: var(--clr-blue-200);
+  --clr-text-primary: var(--clr-white);
+  --clr-text-secondary: var(--clr-black);
+
+  --clr-background-button-1: var(--clr-green);
+  --clr-background-button-1-hover: var(--clr-lightGreen);
+
+  --clr-background-button-2: var(--clr-red-400);
+  --clr-background-button-2-alt: var(--clr-red-500);
+
+  --clr-background-button-3: var(--clr-blue-400);
+  --clr-background-button-3-disable: var(--clr-blue-250);
+  --clr-background-button-3-hover: var(--clr-blue-300);
+  --clr-background-button-3-select: var(--clr-blue-600);
+
+  --clr-focus-outline: var(--clr-blue-500);
+  --clr-enemy-select-outline: var(--clr-red);
+  --clr-player-select-outline: var(--clr-blue);
+
+  --clr-border: var(--clr-black);
+  --clr-border-contrast: var(--clr-white);
 }

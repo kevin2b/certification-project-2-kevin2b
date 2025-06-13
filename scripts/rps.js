@@ -112,7 +112,7 @@
     this.#game = saveGame;
     this.#CPUGameScore = saveCPUGameScore;
     this.#playerGameScore = saveplayerGameScore;
-    this.#metaMessage = `Game: ${this.#game}. Round: ${this.#round}`;
+    this.#metaMessage = `Game:${this.#game} Round:${this.#round}`;
   }
 
   /**
