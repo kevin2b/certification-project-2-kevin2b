@@ -11,6 +11,7 @@ const playerOption = document.querySelectorAll(".js-player-option");
 const gameOverButtons = document.querySelector("#game-over");
 const playAgainButton = document.querySelector("#play-again");
 const resetButton = document.querySelector("#reset");
+const history = document.querySelector("#history");
 
 
 window.addEventListener("pageshow", () =>{
@@ -63,6 +64,7 @@ playAgainButton.addEventListener("click", () =>{
   gameOverButtons.classList.add(HIDDEN_CLASS);
   resetOptionChoices();
   resetSelectedChoices();
+  clearHistory();
   rps.newGame();
   synchronizeGameState();
   togglePlayerButtons(true);
@@ -77,9 +79,9 @@ resetButton.addEventListener("click", () => {
   resetSelectedChoices();
   rps.reset();
   synchronizeGameState();
+  clearHistory();
   togglePlayerButtons(false);
 });
-
 
 /**
  * Make the DOM state reflect current game state
@@ -93,6 +95,10 @@ function synchronizeGameState() {
   playerGameScore.textContent = gameScores.playerGameScore;
   metaInfo.textContent = messages.metaMessage;
   roundInfo.textContent = messages.message;
+  
+  const historyNode = document.createElement("div");
+  historyNode.innerHTML= "<b>" + messages.metaMessage + "</b><br>" + messages.message;
+  history.appendChild(historyNode);
   return;
 }
 
@@ -172,4 +178,8 @@ function displayGameOverState(){
   roundInfo.classList.add(HIDDEN_CLASS);
   gameOverButtons.classList.remove(HIDDEN_CLASS);
   togglePlayerButtons(false);
+}
+
+function clearHistory(){
+  history.innerHTML = "";
 }

@@ -73,6 +73,10 @@
   display: none;
 }
 
+.game-wrapper{
+  position: relative;
+}
+
 .help{
   position: absolute;
   top: 0;
@@ -84,6 +88,7 @@
   color: var(--clr-text-primary);
   padding: 0.5rem;
   border-block-start: 1px solid var(--clr-border-contrast);
+  z-index: 10;
 }
 
 .help__close-img{
@@ -115,10 +120,6 @@
 
 .help__instruction>p{
   font-weight: 400;
-}
-
-.game-wrapper{
-  position: relative;
 }
 
 .game{
@@ -396,7 +397,6 @@ p {
     padding-block: 1rem;
   }
 
-
   .enemy__option-group,
   .player__option-group{
     flex-direction: row;
@@ -432,7 +432,48 @@ p {
   .game__reset{
     padding-block: 0.75rem;
   }
+}
 
+@media (min-width: 60rem){
+  .wrapper {
+    max-inline-size: none;
+  }
+
+  .game-wrapper{
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 5fr) minmax(0, 2fr);
+  }
+
+  .help{
+    position: static;
+    inline-size: 100%;
+  }
+
+  .game__history{
+    min-block-size: 100%;
+    max-block-size: 100%;
+    inline-size: 100%;
+    background-color: var(--clr-background-primary);
+    color: var(--clr-text-primary);
+    border-block-start: 1px solid var(--clr-border-contrast);
+    padding: 0.5rem;
+  }
+
+  .history__header{
+    font-size: 1.5rem;
+    margin-block-start: 1rem;
+  }
+
+  .history__text{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-block-start: 1rem;
+  }
+
+  .history__text>p{
+    font-weight: 400;
+  }
 
 }
 
