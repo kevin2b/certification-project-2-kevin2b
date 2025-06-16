@@ -10,9 +10,8 @@
   #metaMessage = `Game:${this.#game} Round:${this.#round}`;
   
   /**
-   * Play a rock, paper, scissor round. Game message for current round is stored in #message. If current round is same as TOTAL_ROUNDS,
-   * a new game begins and the previous game score is recorded accordingly based on the results of rounds of that game (+1 for overall 
-   * win, +0.5 for both player and CPU for draw)
+   * Play a rock, paper, scissor round. Game messages are stored in #message and #metaMessage. If current round is greater than TOTAL_ROUNDS,
+   * a new game begins.
    * @param {Number} playerChoiceNum Integer 0, 1, or 2 representing Rock, Paper or Scissor respectively. Rock is used if invalid input.
    * @param {Number} CPUChoiceNum Integer 0, 1, or 2 representing Rock, Paper or Scissor respectively. Rock is used if invalid input.
    */
@@ -21,10 +20,11 @@
     const playerChoice = this.convertChoice(playerChoiceNum);
     const CPUChoice = this.convertChoice(CPUChoiceNum);
 
-    if (this.#round > RPS.TOTAL_ROUNDS){
+    if (this.isGameOver()){
       this.newGame();
     }
 
+    //Handle round
     if (playerChoice === CPUChoice){
       this.#playerRoundScore += 0.5;
       this.#CPURoundScore += 0.5;
@@ -38,16 +38,23 @@
     else{
       this.#CPURoundScore += 1;
       this.#setMessage(`${playerChoice} loses to ${CPUChoice}.`);
-    }  
+    }
+
+    //Update messages
     this.#appendMessage(` ${this.#playerRoundScore}:${this.#CPURoundScore}`);
     this.#metaMessage = `Game:${this.#game} Round:${this.#round}`;
 
-    if (this.#round === RPS.TOTAL_ROUNDS){
+    this.#round++;
+
+    //Update game result if game ended
+    if (this.isGameOver()){
       this.#updateGameResult();
     }
-    this.#round++;
   }
 
+  /**
+   * Reset everything like creating a new RPS object from scratch.
+   */
   reset(){
     this.#game = 1;
     this.#round = 1;
@@ -77,6 +84,10 @@
     return DICTIONARY?.[choiceNum] || "Rock";;
   }
 
+  /**
+   * Get message and meta message.
+   * @returns Object containing meta messages and messages.
+   */
   getMessages(){
     return(
       {
@@ -86,6 +97,10 @@
     );
   }
 
+  /**
+   * Get game score for player and CPU
+   * @returns Object containing player and CPU score.
+   */
   getGameScores(){
     return(
       {
@@ -104,6 +119,9 @@
   }
 
 
+  /**
+   * Start a new game.
+   */
   newGame(){
     const saveGame = this.#game + 1;
     const saveCPUGameScore = this.#CPUGameScore;
