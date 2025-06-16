@@ -29,9 +29,9 @@ export class RPS {
       this.#CPURoundScore += 0.5;
       this.#setMessage(`${playerChoice} ties with ${CPUChoice}.`);
     } else if (
-      (playerChoice === "Rock" && CPUChoice === "Scissor") ||
+      (playerChoice === "Rock" && CPUChoice === "Scissors") ||
       (playerChoice === "Paper" && CPUChoice === "Rock") ||
-      (playerChoice === "Scissor" && CPUChoice === "Paper")
+      (playerChoice === "Scissors" && CPUChoice === "Paper")
     ) {
       this.#playerRoundScore += 1;
       this.#setMessage(`${playerChoice} beats ${CPUChoice}.`);
@@ -80,7 +80,7 @@ export class RPS {
    * @returns String representation of choice
    */
   convertChoice(choiceNum) {
-    const DICTIONARY = { 0: "Rock", 1: "Paper", 2: "Scissor" };
+    const DICTIONARY = { 0: "Rock", 1: "Paper", 2: "Scissors" };
     return DICTIONARY?.[choiceNum] || "Rock";
   }
 
