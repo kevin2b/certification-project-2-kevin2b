@@ -453,6 +453,16 @@ p {
     inline-size: 100%;
   }
 
+  .enemy__choice{
+    border-end-start-radius: 2rem;
+    border-end-end-radius: 2rem;
+  }
+
+  .player__choice{
+    border-start-start-radius: 2rem;
+    border-start-end-radius: 2rem;
+  }
+
   .game__history{
     display: block;
     min-block-size: 100%;
