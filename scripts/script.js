@@ -1,4 +1,4 @@
-import {RPS} from "./rps.js";
+import { RPS } from "./rps.js";
 
 const rps = new RPS();
 const playButton = document.querySelector("#play");
@@ -13,13 +13,12 @@ const playAgainButton = document.querySelector("#play-again");
 const resetButton = document.querySelector("#reset");
 const history = document.querySelector("#history");
 
-
-window.addEventListener("pageshow", () =>{
+window.addEventListener("pageshow", () => {
   togglePlayerButtons(false);
 });
 
 //Start the game on hitting play button
-playButton.addEventListener("click", ()=>{
+playButton.addEventListener("click", () => {
   metaInfo.classList.remove(HIDDEN_CLASS);
   roundInfo.classList.remove(HIDDEN_CLASS);
   playButton.classList.add(HIDDEN_CLASS);
@@ -33,18 +32,18 @@ playerOptions.addEventListener("click", (e) => {
   var playerChoiceNum = 0;
 
   //If what user clicked is not a valid button or disabled, do nothing
-  if (playerChoice === null || playerChoice.disabled){
+  if (playerChoice === null || playerChoice.disabled) {
     return;
   }
 
   //Parse what choice user selected
-  if (playerChoice.id === "player-rock"){
+  if (playerChoice.id === "player-rock") {
     playerChoiceNum = 0;
   }
-  if (playerChoice.id === "player-paper"){
+  if (playerChoice.id === "player-paper") {
     playerChoiceNum = 1;
   }
-  if (playerChoice.id === "player-scissor"){
+  if (playerChoice.id === "player-scissor") {
     playerChoiceNum = 2;
   }
 
@@ -56,13 +55,13 @@ playerOptions.addEventListener("click", (e) => {
   synchronizeGameState();
   outlineOptionChoices(playerChoiceNum, CPUChoiceNum);
   showSelectedChoices(playerChoiceNum, CPUChoiceNum);
-  if (rps.isGameOver()){
+  if (rps.isGameOver()) {
     displayGameOverState();
   }
 });
 
 //Start new game (after current game is over)
-playAgainButton.addEventListener("click", () =>{
+playAgainButton.addEventListener("click", () => {
   metaInfo.classList.remove(HIDDEN_CLASS);
   roundInfo.classList.remove(HIDDEN_CLASS);
   gameOverButtons.classList.add(HIDDEN_CLASS);
@@ -100,9 +99,10 @@ function synchronizeGameState() {
   playerGameScore.textContent = gameScores.playerGameScore;
   metaInfo.textContent = messages.metaMessage;
   roundInfo.textContent = messages.message;
-  
+
   const historyNode = document.createElement("div");
-  historyNode.innerHTML= "<b>" + messages.metaMessage + "</b><br>" + messages.message;
+  historyNode.innerHTML =
+    "<b>" + messages.metaMessage + "</b><br>" + messages.message;
   history.appendChild(historyNode);
   return;
 }
@@ -111,30 +111,30 @@ function synchronizeGameState() {
  * Enable player choices in DOM if enable is true, disable if false
  * @param {boolean} enable enable player choice buttons if true, disable if false
  */
-function togglePlayerButtons(enable){
+function togglePlayerButtons(enable) {
   const playerButtons = document.querySelectorAll(".player__option");
   playerButtons.forEach((playerButton) => {
     playerButton.disabled = !enable;
-  })
+  });
 }
 
 //Show selected button in DOM for both player and CPU
-function outlineOptionChoices(playerChoiceNum, CPUChoiceNum){
+function outlineOptionChoices(playerChoiceNum, CPUChoiceNum) {
   resetOptionChoices();
   CPUOption.forEach((selected, index) => {
-    if (index === CPUChoiceNum){
+    if (index === CPUChoiceNum) {
       selected.classList.add("js-enemy-outline");
     }
   });
   playerOption.forEach((selected, index) => {
-    if (index === playerChoiceNum){
+    if (index === playerChoiceNum) {
       selected.classList.add("js-player-outline");
     }
   });
 }
 
 //Clear selected button in DOM for both player and CPU
-function resetOptionChoices(){
+function resetOptionChoices() {
   CPUOption.forEach((selected) => {
     selected.classList.remove("js-enemy-outline");
   });
@@ -144,7 +144,7 @@ function resetOptionChoices(){
 }
 
 //Show selected choice in DOM for both player and CPU
-function showSelectedChoices(playerChoiceNum, CPUChoiceNum){
+function showSelectedChoices(playerChoiceNum, CPUChoiceNum) {
   const enemySelected = document.querySelectorAll(".js-enemy-selected");
   const playerSelected = document.querySelectorAll(".js-player-selected");
   enemySelected.forEach((option, index) => {
@@ -170,7 +170,7 @@ function showSelectedChoices(playerChoiceNum, CPUChoiceNum){
 }
 
 //Reset selected choice in DOM for both player and CPU
-function resetSelectedChoices(){
+function resetSelectedChoices() {
   const enemySelected = document.querySelectorAll(".js-enemy-selected");
   const playerSelected = document.querySelectorAll(".js-player-selected");
   enemySelected.forEach((option, index) => {
@@ -184,13 +184,13 @@ function resetSelectedChoices(){
 }
 
 //Modify DOM if current game is over.
-function displayGameOverState(){
+function displayGameOverState() {
   roundInfo.classList.add(HIDDEN_CLASS);
   gameOverButtons.classList.remove(HIDDEN_CLASS);
   togglePlayerButtons(false);
 }
 
 //Clear game history in DOM
-function clearHistory(){
+function clearHistory() {
   history.innerHTML = "";
 }

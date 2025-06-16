@@ -12,7 +12,7 @@
   border: 1px solid var(--clr-border);
 }
 
-.header{
+.header {
   display: flex;
   gap: 1rem;
   padding-inline: 0.5rem;
@@ -21,27 +21,27 @@
   color: var(--clr-text-primary);
 }
 
-.header__logo{
+.header__logo {
   display: block;
   max-block-size: 3rem;
   inline-size: auto;
   align-self: center;
-  filter: brightness(0) invert(1); 
+  filter: brightness(0) invert(1);
 }
 
-.header__heading{
+.header__heading {
   font-weight: 400;
   font-family: var(--ff-heading-1);
   font-size: 2rem;
 }
 
-.header__heading>i{
+.header__heading > i {
   font-weight: 900;
   font-family: var(--ff-heading-2);
   font-size: 2.5rem;
 }
 
-.help__button{
+.help__button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,29 +55,29 @@
 }
 
 .help__button:hover,
-.help__button:focus-visible{
+.help__button:focus-visible {
   cursor: pointer;
   background-color: var(--clr-background-button-1-hover);
-  outline: 3px solid var(--clr-focus-outline); 
+  outline: 3px solid var(--clr-focus-outline);
 }
 
-.help__img{
+.help__img {
   display: flex;
   block-size: 2rem;
   max-block-size: 2rem;
   inline-size: auto;
-  filter: brightness(0) invert(1); 
+  filter: brightness(0) invert(1);
 }
 
-.help__button-text{
+.help__button-text {
   display: none;
 }
 
-.game-wrapper{
+.game-wrapper {
   position: relative;
 }
 
-.help{
+.help {
   position: absolute;
   top: 0;
   left: 0;
@@ -91,57 +91,58 @@
   z-index: 10;
 }
 
-.help__close-img{
+.help__close-img {
   inline-size: 1.5rem;
   block-size: auto;
-  filter: brightness(0) invert(1); 
+  filter: brightness(0) invert(1);
 }
 
 .help__close-img:hover,
-.help__close-img:focus-visible{
+.help__close-img:focus-visible {
   cursor: pointer;
-  filter: brightness(0) saturate(100%) invert(70%) sepia(5%) saturate(0%) hue-rotate(0deg) brightness(90%) contrast(90%);
+  filter: brightness(0) saturate(100%) invert(70%) sepia(5%) saturate(0%)
+    hue-rotate(0deg) brightness(90%) contrast(90%);
 }
 
-.help__text-wrapper{
+.help__text-wrapper {
   text-align: left;
 }
 
-.help__header{
+.help__header {
   font-size: 1.5rem;
   margin-block-end: 1rem;
 }
 
-.help__instruction{
+.help__instruction {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.help__instruction>p{
+.help__instruction > p {
   font-weight: 400;
 }
 
-.game{
+.game {
   --padding-sub-section: 0.5rem;
   display: flex;
   flex-direction: column;
   color: var(--clr-text-secondary);
 }
 
-.game__enemy{
+.game__enemy {
   text-align: right;
   background-color: var(--clr-background-secondary);
   padding: var(--padding-sub-section);
   font-size: var(--font-text-large);
 }
 
-.enemy__option-group{
+.enemy__option-group {
   background-color: var(--clr-background-secondary);
 }
 
 .enemy__option-group,
-.player__option-group{
+.player__option-group {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -150,7 +151,7 @@
 }
 
 .enemy__option,
-.player__option{
+.player__option {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -162,11 +163,11 @@
   border-radius: 2rem;
 }
 
-.enemy__option{
+.enemy__option {
   background-color: var(--clr-background-button-2);
 }
 
-.option__img{
+.option__img {
   display: flex;
   max-block-size: 2rem;
   inline-size: auto;
@@ -174,7 +175,7 @@
 }
 
 .enemy__choice,
-.player__choice{
+.player__choice {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -182,18 +183,18 @@
   padding-block: 0.25rem;
 }
 
-.enemy__choice{
+.enemy__choice {
   background-color: var(--clr-background-secondary);
 }
 
-.selected__img{
+.selected__img {
   display: flex;
   max-block-size: 2rem;
   inline-size: auto;
   align-self: center;
 }
 
-.selected{
+.selected {
   transition: transform 0.25s ease-in;
   display: flex;
   justify-content: center;
@@ -202,11 +203,11 @@
   gap: 0.5rem;
 }
 
-.js-enemy-selected{
+.js-enemy-selected {
   transform: translateX(100%);
 }
 
-.js-player-selected{
+.js-player-selected {
   transform: translateX(-100%);
 }
 
@@ -214,7 +215,7 @@
   transform: translateX(0);
 }
 
-.game__info{
+.game__info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -224,11 +225,11 @@
   gap: 0.25rem;
 }
 
-.game__meta{
+.game__meta {
   font-size: var(--font-text-large);
 }
 
-.game__play{
+.game__play {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -239,7 +240,7 @@
   background-color: var(--clr-background-button-1);
 }
 
-.play__img{
+.play__img {
   display: block;
   block-size: 2rem;
   max-block-size: 2rem;
@@ -247,13 +248,13 @@
 }
 
 .game__play:hover,
-.game__play:focus-visible{
+.game__play:focus-visible {
   cursor: pointer;
   background-color: var(--clr-background-button-1-hover);
-  outline: 3px solid var(--clr-focus-outline); 
+  outline: 3px solid var(--clr-focus-outline);
 }
 
-.game__over{
+.game__over {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -262,7 +263,7 @@
 }
 
 .game__play-again,
-.game__reset{
+.game__reset {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -273,52 +274,52 @@
   font-weight: 700;
 }
 
-.game__play-again{
+.game__play-again {
   background-color: var(--clr-background-button-1);
 }
 
 .game__play-again:hover,
-.game__play-again:focus-visible{
+.game__play-again:focus-visible {
   cursor: pointer;
   background-color: var(--clr-background-button-1-hover);
-  outline: 3px solid var(--clr-focus-outline); 
+  outline: 3px solid var(--clr-focus-outline);
 }
 
-.game__reset{
+.game__reset {
   background-color: var(--clr-background-button-2-alt);
 }
 
 .game__reset:hover,
-.game__reset:focus-visible{
+.game__reset:focus-visible {
   cursor: pointer;
   background-color: var(--clr-background-button-2);
-  outline: 3px solid var(--clr-focus-outline); 
+  outline: 3px solid var(--clr-focus-outline);
 }
 
-.player__choice{
+.player__choice {
   background-color: var(--clr-background-tertiary);
 }
 
-.player__option-group{
+.player__option-group {
   background-color: var(--clr-background-tertiary);
 }
 
-.player__option{
+.player__option {
   background-color: var(--clr-background-button-3);
 }
 
-.player__option:disabled{
+.player__option:disabled {
   background-color: var(--clr-background-button-3-disable);
 }
 
 .player__option:hover:not(:disabled),
-.player__option:focus-visible:not(:disabled){
+.player__option:focus-visible:not(:disabled) {
   cursor: pointer;
   background-color: var(--clr-background-button-3-hover);
   outline: 3px solid var(--clr-focus-outline);
 }
 
-.game__player{
+.game__player {
   align-items: flex-start;
   padding: var(--padding-sub-section);
   font-size: var(--font-text-large);
@@ -326,32 +327,31 @@
 }
 
 .enemy__name,
-.player__name{
+.player__name {
   font-weight: 700;
 }
 
-.game__history{
+.game__history {
   display: none;
 }
 
-.js-hidden{
+.js-hidden {
   display: none;
 }
 
-.js-invisible{
+.js-invisible {
   visibility: hidden;
 }
 
-.player__option.js-player-outline{
+.player__option.js-player-outline {
   outline: 3px solid var(--clr-player-select-outline);
   background-color: var(--clr-background-button-3-select);
 }
 
-.js-enemy-outline{
+.js-enemy-outline {
   outline: 3px solid var(--clr-enemy-select-outline);
   background-color: var(--clr-background-button-2-alt);
 }
-
 
 h1,
 h2,
@@ -368,7 +368,7 @@ p {
   font-weight: 700;
 }
 
-@media (min-width: 30rem){
+@media (min-width: 30rem) {
   .wrapper {
     max-inline-size: var(--maxWidth-tablet);
     margin-inline: 0;
@@ -378,92 +378,92 @@ p {
     border: none;
   }
 
-  .header{
+  .header {
     padding-inline: 4rem;
     padding-block: 2rem;
   }
 
-  .help{
+  .help {
     inline-size: 50%;
   }
 
-  .help__button-text{
+  .help__button-text {
     display: block;
     color: var(--clr-text-primary);
   }
-  
-  .game-wrapper{
+
+  .game-wrapper {
     flex: auto;
   }
 
-  .game__row{
+  .game__row {
     padding-inline: 3rem;
     padding-block: 1rem;
   }
 
   .enemy__option-group,
-  .player__option-group{
+  .player__option-group {
     flex-direction: row;
   }
 
   .enemy__option,
-  .player__option{
+  .player__option {
     padding-block: 0.75rem;
   }
 
   .enemy__choice,
-  .player__choice{
+  .player__choice {
     min-block-size: 4rem;
   }
 
-  .js-enemy-selected{
+  .js-enemy-selected {
     transform: translateX(50%);
   }
 
-  .js-player-selected{
+  .js-player-selected {
     transform: translateX(-50%);
   }
 
-  .game__info{
+  .game__info {
     min-block-size: 10rem;
   }
 
-  .game__play{
+  .game__play {
     padding-block: 1rem;
   }
 
   .game__play-again,
-  .game__reset{
+  .game__reset {
     padding-block: 0.75rem;
   }
 }
 
-@media (min-width: 60rem){
+@media (min-width: 60rem) {
   .wrapper {
     max-inline-size: none;
   }
 
-  .game-wrapper{
+  .game-wrapper {
     display: grid;
     grid-template-columns: minmax(0, 2fr) minmax(0, 5fr) minmax(0, 2fr);
   }
 
-  .help{
+  .help {
     position: static;
     inline-size: 100%;
   }
 
-  .enemy__choice{
+  .enemy__choice {
     border-end-start-radius: 2rem;
     border-end-end-radius: 2rem;
   }
 
-  .player__choice{
+  .player__choice {
     border-start-start-radius: 2rem;
     border-start-end-radius: 2rem;
   }
 
-  .game__history{
+  .game__history {
     display: block;
     min-block-size: 100%;
     inline-size: 100%;
@@ -473,21 +473,19 @@ p {
     padding: 0.5rem;
   }
 
-  .history__header{
+  .history__header {
     font-size: 1.5rem;
     margin-block-start: 1rem;
   }
 
-  .history__text{
+  .history__text {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     margin-block-start: 1rem;
   }
 
-  .history__text>p{
+  .history__text > p {
     font-weight: 400;
   }
-
 }
-

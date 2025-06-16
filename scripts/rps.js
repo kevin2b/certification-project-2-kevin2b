@@ -1,4 +1,4 @@
- export class RPS {
+export class RPS {
   static TOTAL_ROUNDS = 3;
   #game = 1;
   #round = 1;
@@ -8,34 +8,34 @@
   #CPURoundScore = 0;
   #message = "Choose wisely";
   #metaMessage = `Game:${this.#game} Round:${this.#round}`;
-  
+
   /**
    * Play a rock, paper, scissor round. Game messages are stored in #message and #metaMessage. If current round is greater than TOTAL_ROUNDS,
    * a new game begins.
    * @param {Number} playerChoiceNum Integer 0, 1, or 2 representing Rock, Paper or Scissor respectively. Rock is used if invalid input.
    * @param {Number} CPUChoiceNum Integer 0, 1, or 2 representing Rock, Paper or Scissor respectively. Rock is used if invalid input.
    */
-  playRound(playerChoiceNum, CPUChoiceNum){
-    
+  playRound(playerChoiceNum, CPUChoiceNum) {
     const playerChoice = this.convertChoice(playerChoiceNum);
     const CPUChoice = this.convertChoice(CPUChoiceNum);
 
-    if (this.isGameOver()){
+    if (this.isGameOver()) {
       this.newGame();
     }
 
     //Handle round
-    if (playerChoice === CPUChoice){
+    if (playerChoice === CPUChoice) {
       this.#playerRoundScore += 0.5;
       this.#CPURoundScore += 0.5;
       this.#setMessage(`${playerChoice} ties with ${CPUChoice}.`);
-    }
-    else if (playerChoice === "Rock" && CPUChoice === "Scissor" || playerChoice === "Paper" && CPUChoice === "Rock" ||
-      playerChoice === "Scissor" && CPUChoice === "Paper"){
-        this.#playerRoundScore += 1;
-        this.#setMessage(`${playerChoice} beats ${CPUChoice}.`);
-    }
-    else{
+    } else if (
+      (playerChoice === "Rock" && CPUChoice === "Scissor") ||
+      (playerChoice === "Paper" && CPUChoice === "Rock") ||
+      (playerChoice === "Scissor" && CPUChoice === "Paper")
+    ) {
+      this.#playerRoundScore += 1;
+      this.#setMessage(`${playerChoice} beats ${CPUChoice}.`);
+    } else {
       this.#CPURoundScore += 1;
       this.#setMessage(`${playerChoice} loses to ${CPUChoice}.`);
     }
@@ -47,7 +47,7 @@
     this.#round++;
 
     //Update game result if game ended
-    if (this.isGameOver()){
+    if (this.isGameOver()) {
       this.#updateGameResult();
     }
   }
@@ -55,7 +55,7 @@
   /**
    * Reset everything like creating a new RPS object from scratch.
    */
-  reset(){
+  reset() {
     this.#game = 1;
     this.#round = 1;
     this.#playerGameScore = 0;
@@ -70,7 +70,7 @@
    * Generate randomly 0, 1, or 2
    * @returns Random integer from 0 to 2 inclusive
    */
-  generateCPUChoice(){
+  generateCPUChoice() {
     return Math.floor(Math.random() * 3);
   }
 
@@ -79,50 +79,45 @@
    * @param {Number} choiceNum Integer 0, 1, or 2 representing Rock, Paper or Scissor respectively
    * @returns String representation of choice
    */
-  convertChoice(choiceNum){
-    const DICTIONARY = {0: "Rock", 1: "Paper", 2: "Scissor"};
-    return DICTIONARY?.[choiceNum] || "Rock";;
+  convertChoice(choiceNum) {
+    const DICTIONARY = { 0: "Rock", 1: "Paper", 2: "Scissor" };
+    return DICTIONARY?.[choiceNum] || "Rock";
   }
 
   /**
    * Get message and meta message.
    * @returns Object containing meta messages and messages.
    */
-  getMessages(){
-    return(
-      {
-        message: this.#message,
-        metaMessage: this.#metaMessage
-      }
-    );
+  getMessages() {
+    return {
+      message: this.#message,
+      metaMessage: this.#metaMessage,
+    };
   }
 
   /**
    * Get game score for player and CPU
    * @returns Object containing player and CPU score.
    */
-  getGameScores(){
-    return(
-      {
-        playerGameScore: this.#playerGameScore,
-        CPUGameScore: this.#CPUGameScore
-      }
-    )
+  getGameScores() {
+    return {
+      playerGameScore: this.#playerGameScore,
+      CPUGameScore: this.#CPUGameScore,
+    };
   }
 
   /**
    * Return true if current game is over.
    * @returns true if current game is over
    */
-  isGameOver(){
+  isGameOver() {
     return this.#round > RPS.TOTAL_ROUNDS;
   }
-
 
   /**
    * Start a new game.
    */
-  newGame(){
+  newGame() {
     const saveGame = this.#game + 1;
     const saveCPUGameScore = this.#CPUGameScore;
     const saveplayerGameScore = this.#playerGameScore;
@@ -140,25 +135,28 @@
     this.#metaMessage = `Game:${this.#game}`;
     if (this.#playerRoundScore > this.#CPURoundScore) {
       this.#playerGameScore++;
-      this.#metaMessage += ` You Win! ${this.#playerRoundScore}:${this.#CPURoundScore}`;
-    }
-    else if (this.#CPURoundScore > this.#playerRoundScore) {
+      this.#metaMessage += ` You Win! ${this.#playerRoundScore}:${
+        this.#CPURoundScore
+      }`;
+    } else if (this.#CPURoundScore > this.#playerRoundScore) {
       this.#CPUGameScore++;
-      this.#metaMessage += ` You Lose! ${this.#playerRoundScore}:${this.#CPURoundScore}`;
-    }
-    else {
+      this.#metaMessage += ` You Lose! ${this.#playerRoundScore}:${
+        this.#CPURoundScore
+      }`;
+    } else {
       this.#playerGameScore += 0.5;
       this.#CPUGameScore += 0.5;
-      this.#metaMessage += ` Game Draw! ${this.#playerRoundScore}:${this.#CPURoundScore}`
+      this.#metaMessage += ` Game Draw! ${this.#playerRoundScore}:${
+        this.#CPURoundScore
+      }`;
     }
   }
 
-  #setMessage(message){
+  #setMessage(message) {
     this.#message = message;
   }
 
-  #appendMessage(message){
+  #appendMessage(message) {
     this.#message += message;
   }
-
 }

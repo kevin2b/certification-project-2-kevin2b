@@ -3,26 +3,26 @@ const helpButton = document.querySelector("#help-button");
 const helpClose = document.querySelector("#help-close");
 const INVISIBLE_CLASS = "js-invisible";
 
-helpButton.addEventListener("click", ()=>{
+helpButton.addEventListener("click", () => {
   helpInfo.classList.toggle(INVISIBLE_CLASS);
 });
 
-helpClose.addEventListener("click", ()=>{
+helpClose.addEventListener("click", () => {
   closeHelp();
 });
 
-helpClose.addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') {
+helpClose.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
     closeHelp();
   }
 });
 
-window.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
+window.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
     closeHelp();
   }
 });
 
-function closeHelp(){
+function closeHelp() {
   helpInfo.classList.add(INVISIBLE_CLASS);
 }

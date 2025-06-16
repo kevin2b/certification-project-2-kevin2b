@@ -1,22 +1,22 @@
 @font-face {
-  font-family: 'Press Start 2P';
-  src: url('../fonts/Press_Start_2P/PressStart2P-Regular.ttf');
+  font-family: "Press Start 2P";
+  src: url("../fonts/Press_Start_2P/PressStart2P-Regular.ttf");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Rubik';
-  src: url('../fonts/Rubik/Rubik-Italic-VariableFont_wght.ttf');
+  font-family: "Rubik";
+  src: url("../fonts/Rubik/Rubik-Italic-VariableFont_wght.ttf");
   font-weight: 300 700;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Quicksand';
-  src: url('../fonts/Quicksand/Quicksand-VariableFont_wght.ttf');
+  font-family: "Quicksand";
+  src: url("../fonts/Quicksand/Quicksand-VariableFont_wght.ttf");
   font-weight: 300 700;
   font-style: normal;
   font-display: swap;
@@ -33,7 +33,7 @@
   --font-text: 1rem;
   --font-text-large: 1.25rem;
 
-  @media (min-width: 30rem){
+  @media (min-width: 30rem) {
     --font-text: 1.15rem;
     --font-text-large: 1.4rem;
   }
@@ -42,20 +42,20 @@
   --clr-black: black;
   --clr-green: #22c55e;
   --clr-lightGreen: #86efac;
-  --clr-red-300: #FEE2E2;
-  --clr-red-400: #FCA5A5;
-  --clr-red-500: #F87171;
+  --clr-red-300: #fee2e2;
+  --clr-red-400: #fca5a5;
+  --clr-red-500: #f87171;
   --clr-red: red;
 
-  --clr-blue-200: #DBEAFE;
+  --clr-blue-200: #dbeafe;
   --clr-blue-250: #bad2f1;
-  --clr-blue-300: #93C5FD;
-  --clr-blue-400: #60A5FA;
+  --clr-blue-300: #93c5fd;
+  --clr-blue-400: #60a5fa;
   --clr-blue-500: #306ccf;
-  --clr-blue-600: #2563EB;
+  --clr-blue-600: #2563eb;
   --clr-blue: blue;
 
-  --clr-darkBlue: #1F2937;
+  --clr-darkBlue: #1f2937;
 
   --clr-background-primary: var(--clr-darkBlue);
   --clr-background-secondary: var(--clr-red-300);
