@@ -330,6 +330,10 @@
   font-weight: 700;
 }
 
+.game__history{
+  display: none;
+}
+
 .js-hidden{
   display: none;
 }
@@ -450,8 +454,8 @@ p {
   }
 
   .game__history{
+    display: block;
     min-block-size: 100%;
-    max-block-size: 100%;
     inline-size: 100%;
     background-color: var(--clr-background-primary);
     color: var(--clr-text-primary);
