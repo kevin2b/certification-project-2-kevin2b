@@ -47,8 +47,9 @@
   align-items: center;
   align-self: center;
   margin-inline-start: auto;
-  padding: 0.2rem;
+  padding: 0.4rem;
   border-radius: 0.25rem;
+  gap: 0.25rem;
   border: none;
   background-color: var(--clr-background-button-1);
 }
@@ -66,6 +67,10 @@
   max-block-size: 2rem;
   inline-size: auto;
   filter: brightness(0) invert(1); 
+}
+
+.help__button-text{
+  display: none;
 }
 
 .help{
@@ -113,10 +118,13 @@
 }
 
 .game-wrapper{
+  position: relative;
+}
+
+.game{
   --padding-sub-section: 0.5rem;
   display: flex;
   flex-direction: column;
-  position: relative;
   color: var(--clr-text-secondary);
 }
 
@@ -325,6 +333,10 @@
   display: none;
 }
 
+.js-invisible{
+  visibility: hidden;
+}
+
 .player__option.js-player-outline{
   outline: 3px solid var(--clr-player-select-outline);
   background-color: var(--clr-background-button-3-select);
@@ -349,5 +361,78 @@ h6 {
 p {
   margin: 0;
   font-weight: 700;
+}
+
+@media (min-width: 30rem){
+  .wrapper {
+    max-inline-size: var(--maxWidth-tablet);
+    margin-inline: 0;
+    min-block-size: 100vh;
+    display: flex;
+    flex-direction: column;
+    border: none;
+  }
+
+  .header{
+    padding-inline: 4rem;
+    padding-block: 2rem;
+  }
+
+  .help{
+    inline-size: 50%;
+  }
+
+  .help__button-text{
+    display: block;
+    color: var(--clr-text-primary);
+  }
+  
+  .game-wrapper{
+    flex: auto;
+  }
+
+  .game__row{
+    padding-inline: 3rem;
+    padding-block: 1rem;
+  }
+
+
+  .enemy__option-group,
+  .player__option-group{
+    flex-direction: row;
+  }
+
+  .enemy__option,
+  .player__option{
+    padding-block: 0.75rem;
+  }
+
+  .enemy__choice,
+  .player__choice{
+    min-block-size: 4rem;
+  }
+
+  .js-enemy-selected{
+    transform: translateX(50%);
+  }
+
+  .js-player-selected{
+    transform: translateX(-50%);
+  }
+
+  .game__info{
+    min-block-size: 10rem;
+  }
+
+  .game__play{
+    padding-block: 1rem;
+  }
+
+  .game__play-again,
+  .game__reset{
+    padding-block: 0.75rem;
+  }
+
+
 }
 

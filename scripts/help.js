@@ -1,9 +1,10 @@
 const helpInfo = document.querySelector("#help-info");
 const helpButton = document.querySelector("#help-button");
 const helpClose = document.querySelector("#help-close");
+const INVISIBLE_CLASS = "js-invisible";
 
 helpButton.addEventListener("click", ()=>{
-  helpInfo.classList.toggle("js-hidden");
+  helpInfo.classList.toggle(INVISIBLE_CLASS);
 });
 
 helpClose.addEventListener("click", ()=>{
@@ -23,5 +24,5 @@ window.addEventListener('keydown', function(e) {
 });
 
 function closeHelp(){
-  helpInfo.classList.add("js-hidden");
+  helpInfo.classList.add(INVISIBLE_CLASS);
 }

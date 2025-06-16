@@ -24,14 +24,19 @@
 
 :root {
   --minWidth: 20rem;
-  --maxWidth-mobile: 20rem;
-  --maxWidth-desktop: 90rem;
+  --maxWidth-mobile: 30rem;
+  --maxWidth-tablet: 60rem;
 
   --ff-base: "Quicksand", sans-serif;
   --ff-heading-1: "Press Start 2P", system-ui;
   --ff-heading-2: "Rubik", sans-serif;
   --font-text: 1rem;
   --font-text-large: 1.25rem;
+
+  @media (min-width: 30rem){
+    --font-text: 1.15rem;
+    --font-text-large: 1.4rem;
+  }
 
   --clr-white: white;
   --clr-black: black;
